@@ -1,0 +1,66 @@
+
+object_definition:
+
+  [A-Za-z][A-Za-z0-9\_\.]* OBJECT
+  [A-Za-z][A-Za-z0-9\_\.]* POLYGON_LIST
+
+  \w[\w\d\_\.]*\s+(OBJECT|POLYGON_LIST)\s+\{
+
+  if OBJECT:
+    \w[\w\d\_\.]*\s+(OBJECT|POLYGON_LIST)\s+\{
+
+    new_metaobject()
+    recurse()
+
+  elif POLYGON_LIST:
+
+    
+
+  else:
+    syntax error
+
+
+object_definition:
+
+  \w[\w\d\_\.]*\s+(OBJECT|POLYGON_LIST)\s+\{   
+   
+
+vertex_list:
+
+  VERTEX_LIST\s+\{
+
+vertex:
+
+  \[\s+ float\s+ ,\s+ float\s+ ,\s+ float\s+ \]
+
+face_list:
+
+  ELEMENT_CONNECTIONS\s+\{
+
+face:
+
+  \[\s+ int\s+ ,\s+ int\s+ ,\s+ int\s+ \]
+
+
+region_list:
+
+  DEFINE_SURFACE_REGIONS\s+\{
+
+
+region_def:
+
+  \w[\w\d\_\.]*\{
+
+element_list:
+
+  ELEMENT_LIST\s+=\s+
+
+int_array:
+
+  \[\s+ int\s+, ... \]
+
+
+
+
+
+   
